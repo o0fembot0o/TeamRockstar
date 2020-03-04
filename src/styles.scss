@@ -1,0 +1,14 @@
+    // styles.scss
+    @import "app/scss-partials/variables";
+    @import "~@progress/kendo-theme-default/scss/button";
+    @import "~@progress/kendo-theme-default/scss/splitter";
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #232323;
+    }
+    body,html,main, section{
+      height: 100%;
+    }
+
