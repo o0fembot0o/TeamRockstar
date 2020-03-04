@@ -1,0 +1,44 @@
+<main>
+  <app-header></app-header>
+  <section>
+    <div class="btn2-container">
+          <button class="btn2" (click)="fetchSongs()">PUSH ME</button>
+    </div>
+          <div>
+            <ul>
+              <a>
+                <li *ngFor="let songs of songs$ | async">
+                  <form>
+                    <input class="song-title" #title value={{songs.name}} type="text" disabled/>
+                    <input class="song-artist" #artist value={{songs.artist}} type="text" disabled/>
+                    <input class="song-album" #album value={{songs.album}} type="text" disabled/>
+                  </form>
+                  <div class="container">
+                    <div class="interior">
+                      <a class="btn" href="#open-modal">DETAILS</a>
+                    </div>
+                  </div>
+                  <div id="open-modal" class="modal-window">
+                    <div>
+                      <a href="#" title="Close" class="modal-close">Close</a>
+                      <h1>Track info</h1>
+                      <form>
+                        <input class="song-title" #title value={{songs.name}} type="text" disabled/>
+                        <input class="song-artist" #artist value={{songs.artist}} type="text" disabled/>
+                        <input class="song-album" #album value={{songs.album}} type="text" disabled/>
+                        <input class="song-album" #year value={{songs.year}} type="text" />
+                        <input class="song-album" #genre value={{songs.genre}} type="text" />
+                        <input class="song-album" #duration value={{songs.duration}} type="time" />
+                        <input class="song-album" #id value={{songs.id}} type="hidden" />
+                        <input class="song-info" #spotifyId value={{songs.spotifyId}} type="hidden" />
+                        <input class="song-info" #bpm value={{songs.bpm}} type="hidden" />
+                        <input class="song-info" #shortname value={{songs.shortname}} type="hidden" />
+                      </form>
+                  </div>
+                  </div>
+                </li>
+              </a>
+            </ul>
+          </div>
+  </section>
+</main>
